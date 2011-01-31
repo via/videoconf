@@ -1,0 +1,3 @@
+gst-launch-0.10 v4l2src ! videoscale ! video/x-raw-yuv,width=640,height=480 !
+ffmpegcolorspace ! jpegenc ! image/jpeg ! rtpjpegpay ! application/x-rtp !
+udpsink port=5000 host=localhost sync=false
